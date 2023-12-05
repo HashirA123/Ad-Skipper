@@ -1,0 +1,21 @@
+{
+    "name": "Ad skipper",
+    "version": "1.0.0",
+    "description": "automatically skips adds when skip button becomes visible",
+    "permissions": ["tabs"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "action": {
+        "default_title": "ad skipper",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
