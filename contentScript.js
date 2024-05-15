@@ -16,17 +16,26 @@
     const callback = (mutationList, obs) => {
       for (const mutation of mutationList) {
         if (mutation.type === "childList") {
-          var node = document.getElementsByClassName(
-            "ytp-ad-skip-button-modern"
-          )[0];
+          var node = document.getElementsByClassName("ytp-skip-ad-button")[0];
           if (node) {
+            console.log("skipped");
+            node.click();
+          } else if (
+            document.getElementsByClassName("ytp-ad-skip-button-modern")[0]
+          ) {
+            node = document.getElementsByClassName(
+              "ytp-ad-skip-button-modern"
+            )[0];
             console.log("skipped");
             node.click();
           } else {
             var temp = document.getElementById("movie_player");
             if (temp.classList.contains("ad-showing")) {
               let video = document.querySelector("video");
-              video.playbackRate = 16;
+              video.player.on("play", function () {
+                this.currentTime(video.duration);
+              });
+              //video.playbackRate = 2;
               // console.log("sped up");
             }
           }
