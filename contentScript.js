@@ -32,9 +32,7 @@
             var temp = document.getElementById("movie_player");
             if (temp.classList.contains("ad-showing")) {
               let video = document.querySelector("video");
-              video.player.on("play", function () {
-                this.currentTime(video.duration);
-              });
+              if (video.duration) video.currentTime = video.duration;
               //video.playbackRate = 2;
               // console.log("sped up");
             }
