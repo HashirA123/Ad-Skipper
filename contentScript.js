@@ -29,11 +29,17 @@
             console.log("skipped");
             node.click();
           } else {
+            var error = document.getElementsByClassName(
+              "yt-playability-error-supported-renderers"
+            )[0];
+            if (error) {
+              location.reload();
+            }
             var temp = document.getElementById("movie_player");
             if (temp.classList.contains("ad-showing")) {
               let video = document.querySelector("video");
-              if (video.duration) video.currentTime = video.duration;
-              //video.playbackRate = 2;
+              //if (video.duration) video.currentTime = video.duration; // This doesn't work anymore, triggers ad block policy. SAD
+              video.playbackRate = 4;
               // console.log("sped up");
             }
           }
