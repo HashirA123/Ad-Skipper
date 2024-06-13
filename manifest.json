@@ -1,7 +1,7 @@
 {
     "name": "Ad skipper",
     "version": "1.0.0",
-    "description": "automatically skips adds when skip button becomes visible",
+    "description": "Enjoy uninterrupted browsing without the hassle of manually skipping ads.",
     "permissions": ["tabs"],
     "host_permissions": ["https://*.youtube.com/*"],
     "background": {
@@ -13,8 +13,11 @@
             "js": ["contentScript.js"]
         }
     ],
+    "icons": {
+    "128": "icons/icon.png"
+    },
     "action": {
-        "default_title": "ad skipper",
+        "default_title": "YT-Ad-Skipper",
         "default_popup": "popup.html"
     },
     "manifest_version": 3
