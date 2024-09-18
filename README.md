@@ -1,4 +1,4 @@
-# Ad Skipper Chrome Extension
+# Ad Skipper Chrome Extension - DEPRECIATED
 
 ## Overview
 
